@@ -1,4 +1,5 @@
-Profesor,Buenas Tardes disculpe los incovenientes ya que no pude
+Profesor,Buenas Tardes 
+disculpe los incovenientes ya que no pude
 terminar el proyecto ,le hago llegar lo que pude realizar hasta 
 la fecha.
 
