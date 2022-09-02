@@ -29,8 +29,7 @@ namespace SVentas.AppWin
         {
             usuario.Identificacion = txtIdent.Text;
             usuario.NameUser = txtUsuario.Text;
-            //ERROR
-            usuario.Clave = decimal.Parse(txtClave.Text);
+              usuario.Clave = decimal.Parse(txtClave.Text);
 
         }
         private void asignarControles()
@@ -41,14 +40,5 @@ namespace SVentas.AppWin
             
         }
 
-        //private void IniciarFormulario(object sender, EventArgs e)
-        //{
-        //   if (usuario.IdUsuario > 0)
-        //   {
-
-        //      asignarControles();
-
-        //  }
-        //  }
     }
 }

@@ -1,0 +1,17 @@
+Profesor,Buenas Tardes disculpe los incovenientes ya que no pude
+terminar el proyecto ,le hago llegar lo que pude realizar hasta 
+la fecha.
+
+El proyecto consiste en:Sistema de ventas con funcionalidad de hacer
+mantenimientoa las tablas :
+-Usuarios
+-Clientes
+-Productos
+
+Realizar Registros y compras de los productos.
+
+Cuenta con las siguientes interfaces:
+-login 
+-Menu
+-Catalogo de Productos
+-Registro De productos

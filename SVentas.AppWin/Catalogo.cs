@@ -8,11 +8,13 @@ using System.Windows.Forms;
 
 namespace SVentas.AppWin
 {
-    public partial class frmBoleta : Form
+    public partial class Catalogo : Form
     {
-        public frmBoleta()
+        public Catalogo()
         {
             InitializeComponent();
         }
+
+        
     }
 }
