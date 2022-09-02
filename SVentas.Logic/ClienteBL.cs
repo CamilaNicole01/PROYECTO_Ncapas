@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using SVentas.Data;
+using SVentas.Dominio;
+
+namespace SVentas.Logic
+{
+    public static class ClienteBL
+    {
+        public static List<Cliente> Listar()
+        {
+            var clienteData = new ClienteData();
+            return clienteData.Listar();
+        }
+        public static Cliente BuscarPorId(int Id)
+        {
+            var clienteData = new ClienteData();
+            return clienteData.BuscarPorId(Id);
+        }
+
+        public static bool Insertar(Cliente cliente)
+        {
+            var clienteData = new ClienteData();
+            return clienteData.Insertar(cliente);
+        }
+
+        public static bool Actualizar(Cliente cliente)
+        {
+            var clienteData = new ClienteData();
+            return clienteData.Actualizar(cliente);
+        }
+        public static bool Eliminar(int Id)
+        {
+            var clienteData = new ClienteData();
+            return clienteData.Eliminar(Id);
+        }
+    }
+}
+
