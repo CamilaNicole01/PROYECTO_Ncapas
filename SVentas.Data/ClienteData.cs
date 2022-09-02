@@ -91,7 +91,7 @@ namespace SVentas.Data
             using (var conexion = new SqlConnection(cadenaConexion))
             {
                 conexion.Open();
-                var updatesql = "UPDATE Cliente (Nombres, Apellidos, Correo, Observacion, Ciudad) VALUES(@Nombres,@Apellidos ,@Correo ,@Observacion ,@Ciudad)";
+                var updatesql = "UPDATE Cliente (Nombres, Apellidos, Correo, Observacion, Ciudad) VALUES(@Nombres,@Apellidos ,@Correo ,@Observacion ,@Ciudad) WHERE (IdCliente = @Id)";
                 using (var comando = new SqlCommand(updatesql, conexion))
                 {
                     comando.Parameters.AddWithValue("@Nombres", cliente.Nombres);
@@ -99,7 +99,8 @@ namespace SVentas.Data
                     comando.Parameters.AddWithValue("@Correo", cliente.Correo);
                     comando.Parameters.AddWithValue("@Observacion", cliente.Observacion);
                     comando.Parameters.AddWithValue("@Ciudad", cliente.Ciudad);
-                     filasActualizadas = comando.ExecuteNonQuery();
+                    comando.Parameters.AddWithValue("@Id", cliente.IdCliente);
+                    filasActualizadas = comando.ExecuteNonQuery();
                 }
             }
             return filasActualizadas > 0;

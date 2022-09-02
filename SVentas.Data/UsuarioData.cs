@@ -28,7 +28,7 @@ namespace SVentas.Data
                                 usuario.IdUsuario = int.Parse(lector[0].ToString());
                                 usuario.Identificacion = lector[1].ToString();
                                 usuario.NameUser = lector[2].ToString();
-                                usuario.Clave = decimal.Parse(lector[3].ToString());
+                                usuario.Clave = lector[3].ToString();
                                 listado.Add(usuario);
                             }
                         }
@@ -55,8 +55,8 @@ namespace SVentas.Data
                             usuario.IdUsuario = int.Parse(lector[0].ToString());
                             usuario.Identificacion = lector[1].ToString();
                             usuario.NameUser = lector[2].ToString();
-                            usuario.Clave = decimal.Parse(lector[3].ToString());
-                         }
+                            usuario.Clave = lector[3].ToString();
+                        }
                     }
                 }
             }

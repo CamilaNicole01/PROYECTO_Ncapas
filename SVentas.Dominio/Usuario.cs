@@ -9,6 +9,6 @@ namespace SVentas.Dominio
         public int IdUsuario { get; set; }
         public string Identificacion { get; set; }
         public string NameUser { get; set; }
-        public decimal Clave { get; set; }
+        public string Clave { get; set; }
     }
 }

@@ -132,5 +132,10 @@ VALUES('Camara Playstation 5 Blanco','PLAY STATION','390','5','INCLUYE Just Danc
 GO
 SELECT * FROM Producto
 
-
+CREATE TABLE DetalleVenta(
+    ID INT IDENTITY(1,1) CONSTRAINT PKProducto PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+	Total_Ventas VARCHAR(100) NULL,
+)
+GO
 

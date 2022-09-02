@@ -29,7 +29,7 @@ namespace SVentas.AppWin
         {
             usuario.Identificacion = txtIdent.Text;
             usuario.NameUser = txtUsuario.Text;
-              usuario.Clave = decimal.Parse(txtClave.Text);
+            usuario.Clave = txtClave.Text;
 
         }
         private void asignarControles()
