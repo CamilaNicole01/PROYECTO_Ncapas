@@ -30,6 +30,7 @@ namespace SVentas.Logic
             var usuarioData = new UsuarioData();
             return usuarioData.Actualizar(usuario);
         }
+
         public static bool Eliminar(int Id)
         {
             var usuarioData = new UsuarioData();

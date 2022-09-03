@@ -34,19 +34,21 @@ namespace SVentas.AppWin
 
         private void asignarObjetos()
         {
-            this.producto.ListaProductos = txtProducto.Text;
             this.producto.Marca = txtMarca.Text;
             this.producto.Precio = decimal.Parse(txtPrecio.Text);
-            this.producto.Cantidad = int.Parse(txtCantidad.Text);
+            this.producto.Stock = int.Parse(txtCantidad.Text);
             this.producto.Observacion = txtObserva.Text;
+            this.producto.IdNombreProducto = int.Parse(cboNombreProducto.SelectedValue.ToString());
+
         }
            private void asignarControles()
            {
-            txtProducto.Text = producto.ListaProductos;
-            txtMarca.Text = producto.Marca;
+           txtMarca.Text = producto.Marca;
             decimal.Parse(txtPrecio.Text = producto.Precio.ToString());
-            int.Parse(txtCantidad.Text = producto.Cantidad.ToString());
+            int.Parse(txtCantidad.Text = producto.Stock.ToString());
             txtObserva.Text = producto.Observacion;
-             }
+            cboNombreProducto.SelectedValue = producto.IdNombreProducto;
+
+        }
            }
 }

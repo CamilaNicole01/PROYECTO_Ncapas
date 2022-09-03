@@ -10,8 +10,7 @@ namespace SVentas.Logic
     {
         public static List<Producto> Listar()
         {
-
-            var ProductoData = new ProductoData();
+             var ProductoData = new ProductoData();
             return ProductoData.Listar();
         }
 

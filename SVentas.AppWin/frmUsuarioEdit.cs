@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using SVentas.Dominio;
+using SVentas.Logic;
 
 namespace SVentas.AppWin
 {
@@ -30,6 +31,7 @@ namespace SVentas.AppWin
             usuario.Identificacion = txtIdent.Text;
             usuario.NameUser = txtUsuario.Text;
             usuario.Clave = txtClave.Text;
+            usuario.IdTipoUsuario = int.Parse(cboTipoUsuario.SelectedValue.ToString());
 
         }
         private void asignarControles()
@@ -37,8 +39,25 @@ namespace SVentas.AppWin
             txtIdent.Text = usuario.Identificacion;
             txtUsuario.Text = usuario.NameUser;
             decimal.Parse(txtClave.Text = usuario.Clave.ToString());
-            
+            cboTipoUsuario.SelectedValue = usuario.IdTipoUsuario;
+
         }
 
-    }
+        private void IniciarFormulario(object sender, EventArgs e)
+        {
+            cargarDatos();
+            if (usuario.IdUsuario > 0)
+            {
+                asignarControles();
+            }
+        }
+
+        private void cargarDatos()
+        {
+            // Listar los tipo de documentos
+            cboTipoUsuario.DataSource = TipoUsuarioBL.Listar();
+            cboTipoUsuario.DisplayMember = "Nombre";
+            cboTipoUsuario.ValueMember = "ID";
+        }
+}
 }

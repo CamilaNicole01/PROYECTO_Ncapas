@@ -17,20 +17,32 @@ namespace SVentas.AppWin
 
         private void MantUsuario(object sender, EventArgs e)
         {
-            var Usuario = new frmUsuario();
-            Usuario.Show();
+            var usuario = new frmUsuario();
+            usuario.Show();
          }
 
         private void MantCliente(object sender, EventArgs e)
         {
-            var Cliente = new frmCliente();
-            Cliente.Show();
+            var cliente = new frmCliente();
+            cliente.Show();
         }
 
         private void MantProducto(object sender, EventArgs e)
         {
-            var Producto = new frmProducto();
-            Producto.Show();
+            var producto= new frmProducto();
+            producto.Show();
+        }
+
+        private void abrirCatalogo(object sender, EventArgs e)
+        {
+            var catalogo = new Catalogo();
+            catalogo.Show();
+        }
+
+        private void abrirRegistro(object sender, EventArgs e)
+        {
+            var registro = new frmRegistro();
+            registro.Show();
         }
     }
 }

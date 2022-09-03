@@ -10,5 +10,8 @@ namespace SVentas.Dominio
         public string Identificacion { get; set; }
         public string NameUser { get; set; }
         public string Clave { get; set; }
+        public int IdTipoUsuario { get; set; }
+        public bool Estado { get; set; }
+
     }
 }

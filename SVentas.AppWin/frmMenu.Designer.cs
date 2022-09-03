@@ -58,7 +58,7 @@ namespace SVentas.AppWin
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Indigo;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Info;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mantenimientoToolStripMenuItem,
@@ -76,7 +76,7 @@ namespace SVentas.AppWin
             this.clienteToolStripMenuItem,
             this.productosToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.mantenimientoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mantenimientoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(165, 29);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -108,7 +108,7 @@ namespace SVentas.AppWin
             this.catalogoToolStripMenuItem1,
             this.ventasToolStripMenuItem1});
             this.movimientosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.movimientosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.movimientosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
             this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(146, 29);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
@@ -118,12 +118,14 @@ namespace SVentas.AppWin
             this.catalogoToolStripMenuItem1.Name = "catalogoToolStripMenuItem1";
             this.catalogoToolStripMenuItem1.Size = new System.Drawing.Size(193, 34);
             this.catalogoToolStripMenuItem1.Text = "Catalogo";
+            this.catalogoToolStripMenuItem1.Click += new System.EventHandler(this.abrirCatalogo);
             // 
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
             this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(193, 34);
             this.ventasToolStripMenuItem1.Text = "Ventas";
+            this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.abrirRegistro);
             // 
             // frmMenu
             // 
@@ -132,10 +134,12 @@ namespace SVentas.AppWin
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -30,7 +30,7 @@ namespace SVentas.AppWin
             dgvListado.Rows.Clear();
             foreach (var producto in listado)
             {
-                dgvListado.Rows.Add(producto.IdProducto, producto.ListaProductos, producto.Marca, producto.Precio, producto.Cantidad, producto.Observacion);
+                dgvListado.Rows.Add(producto.IdProducto, producto.Marca, producto.Precio, producto.Stock, producto.Observacion, producto.IdNombreProducto, producto.Estado);
             }
         }
 
@@ -107,6 +107,8 @@ namespace SVentas.AppWin
                 }
             }
         }
+
+        
     }
 }
 

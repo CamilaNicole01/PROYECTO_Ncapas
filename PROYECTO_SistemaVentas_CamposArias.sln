@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVentas.Dominio", "SVentas.Dominio\SVentas.Dominio.csproj", "{B0319984-93C1-41CD-A3A1-6F8203A33AAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVentas.Dominio", "SVentas.Dominio\SVentas.Dominio.csproj", "{B0319984-93C1-41CD-A3A1-6F8203A33AAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVentas.Logic", "SVentas.Logic\SVentas.Logic.csproj", "{AD31FFE2-D296-49A8-8549-D2F1F7F373BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVentas.Logic", "SVentas.Logic\SVentas.Logic.csproj", "{AD31FFE2-D296-49A8-8549-D2F1F7F373BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVentas.Data", "SVentas.Data\SVentas.Data.csproj", "{383D20C7-BFB5-4C40-BED6-C54EA904AADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVentas.Data", "SVentas.Data\SVentas.Data.csproj", "{383D20C7-BFB5-4C40-BED6-C54EA904AADE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic", "Business Logic", "{80501FE8-B57E-46B1-9B68-592EC9B05297}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Layer", "Data Layer", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{A55C2D35-35F5-4820-ABD3-465CAADBC8DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVentas.AppWin", "SVentas.AppWin\SVentas.AppWin.csproj", "{E7565BFE-60F8-4816-AFE4-C6F710546C84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVentas.AppWin", "SVentas.AppWin\SVentas.AppWin.csproj", "{E7565BFE-60F8-4816-AFE4-C6F710546C84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

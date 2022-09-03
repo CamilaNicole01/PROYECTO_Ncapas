@@ -29,6 +29,8 @@ namespace SVentas.Data
                                 usuario.Identificacion = lector[1].ToString();
                                 usuario.NameUser = lector[2].ToString();
                                 usuario.Clave = lector[3].ToString();
+                                usuario.IdTipoUsuario = int.Parse(lector[4].ToString());
+                                usuario.Estado = lector[5].ToString() == "1" ? true : false;
                                 listado.Add(usuario);
                             }
                         }
@@ -56,24 +58,29 @@ namespace SVentas.Data
                             usuario.Identificacion = lector[1].ToString();
                             usuario.NameUser = lector[2].ToString();
                             usuario.Clave = lector[3].ToString();
+                            usuario.IdTipoUsuario = int.Parse(lector[4].ToString());
+                            usuario.Estado = lector[5].ToString() == "1" ? true : false;
                         }
                     }
                 }
             }
             return usuario;
          }
+
         public bool Insertar(Usuario usuario)
         {
             int filasInsertadas = 0;
             using (var conexion = new SqlConnection(cadenaConexion))
             {
                 conexion.Open();
-                var Insertsql = "INSERT INTO Usuario (Identificacion, NameUser, Clave) VALUES(@Identificacion, @Nameuser, @Clave )";
+                var Insertsql = "INSERT INTO Usuario (Identificacion, NameUser, Clave, IdTipoUsuario, Estado) VALUES (@Identificacion, @Nameuser, @Clave, @IdTipoUsuario, @Estado)";
                 using (var comando = new SqlCommand(Insertsql, conexion))
                 {
                     comando.Parameters.AddWithValue("@Identificacion", usuario.Identificacion);
                     comando.Parameters.AddWithValue("@Nameuser", usuario.NameUser);
                     comando.Parameters.AddWithValue("@Clave", usuario.Clave);
+                    comando.Parameters.AddWithValue("@IdTipoUsuario", usuario.IdTipoUsuario);
+                     comando.Parameters.AddWithValue("@Estado", usuario.Estado);
                     filasInsertadas = comando.ExecuteNonQuery();
                 }
             }
@@ -85,17 +92,21 @@ namespace SVentas.Data
             using (var conexion = new SqlConnection(cadenaConexion))
             {
                 conexion.Open();
-                var updatesql = "UPDATE Usuario (Identificacion, NameUser, Clave) VALUES(@Identificacion, @Nameuser, @Clave )";
+                var updatesql = "UPDATE Usuario (Identificacion, NameUser, Clave, IdTipoUsuario, Estado) VALUES (@Identificacion, @Nameuser, @Clave, @IdTipoUsuario, @Estado)";
                 using (var comando = new SqlCommand(updatesql, conexion))
                 {
-                    comando.Parameters.AddWithValue("@Identificacion", usuario.Identificacion);
+                    comando.Parameters.AddWithValue("@Identificacion" , usuario.Identificacion);
                     comando.Parameters.AddWithValue("@Nameuser", usuario.NameUser);
                     comando.Parameters.AddWithValue("@Clave", usuario.Clave);
+                    comando.Parameters.AddWithValue("@IdTipoUsario", usuario.IdTipoUsuario);
+                    comando.Parameters.AddWithValue("@Estado", usuario.Estado);
                     filasActualizadas = comando.ExecuteNonQuery();
                 }
             }
+
             return filasActualizadas > 0;
         }
+
         public bool Eliminar(int Id)
         {
             int filasEiminadas = 0;

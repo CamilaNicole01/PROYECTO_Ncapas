@@ -90,7 +90,7 @@ namespace SVentas.AppWin
             this.tsbEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(812, 34);
+            this.toolStrip1.Size = new System.Drawing.Size(813, 34);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -139,7 +139,7 @@ namespace SVentas.AppWin
             this.dgvListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListado.RowHeadersWidth = 62;
             this.dgvListado.RowTemplate.Height = 33;
-            this.dgvListado.Size = new System.Drawing.Size(816, 288);
+            this.dgvListado.Size = new System.Drawing.Size(812, 402);
             this.dgvListado.TabIndex = 4;
             // 
             // Column1
@@ -190,7 +190,7 @@ namespace SVentas.AppWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 327);
+            this.ClientSize = new System.Drawing.Size(813, 408);
             this.Controls.Add(this.dgvListado);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmCliente";

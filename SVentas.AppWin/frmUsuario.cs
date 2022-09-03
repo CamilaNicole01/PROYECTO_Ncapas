@@ -28,7 +28,7 @@ namespace SVentas.AppWin
             dgvListado.Rows.Clear();
             foreach (var usuario in listado)
             {
-                dgvListado.Rows.Add(usuario.IdUsuario, usuario.Identificacion, usuario.NameUser, usuario.Clave);
+                dgvListado.Rows.Add(usuario.IdUsuario, usuario.Identificacion, usuario.NameUser, usuario.Clave, usuario.IdTipoUsuario, usuario.Estado);
             }
         }
 

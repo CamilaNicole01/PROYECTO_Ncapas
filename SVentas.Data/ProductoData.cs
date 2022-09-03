@@ -17,22 +17,21 @@ namespace SVentas.Data
                 conexion.Open();
                 using (var comando = new SqlCommand("Select * from Producto", conexion))
                 {
-
                     using (var lector = comando.ExecuteReader())
                     {
-
-                        if (lector != null && lector.HasRows)
+                      if (lector != null && lector.HasRows)
                         {
                             Producto producto;
                             while (lector.Read())
                             {
                                 producto = new Producto();
                                 producto.IdProducto = int.Parse(lector[0].ToString());
-                                producto.ListaProductos= (lector[1].ToString());
-                                producto.Marca = (lector[2].ToString());
-                                producto.Precio = decimal.Parse(lector[3].ToString());
-                                producto.Cantidad= int.Parse(lector[4].ToString());
-                                producto.Observacion = (lector[5].ToString());
+                                producto.Marca = (lector[1].ToString());
+                                producto.Precio = decimal.Parse(lector[2].ToString());
+                                producto.Stock= int.Parse(lector[3].ToString());
+                                producto.Observacion = (lector[4].ToString());
+                                producto.IdNombreProducto = int.Parse(lector[5].ToString());
+                                producto.Estado = lector[5].ToString() == "1" ? true : false;
                                 listado.Add(producto);
                              }
                         }
@@ -58,14 +57,14 @@ namespace SVentas.Data
                         if (lector != null && lector.HasRows)
                         {
                             lector.Read();
-                            producto = new Producto();
                             producto.IdProducto = int.Parse(lector[0].ToString());
-                            producto.ListaProductos = (lector[1].ToString());
-                            producto.Marca = (lector[2].ToString());
-                            producto.Precio = decimal.Parse(lector[3].ToString());
-                            producto.Cantidad = int.Parse(lector[4].ToString());
-                            producto.Observacion = (lector[5].ToString());
-                }
+                            producto.Marca = (lector[1].ToString());
+                            producto.Precio = decimal.Parse(lector[2].ToString());
+                            producto.Stock = int.Parse(lector[3].ToString());
+                            producto.Observacion = (lector[4].ToString());
+                            producto.IdNombreProducto = int.Parse(lector[5].ToString());
+                            producto.Estado = lector[5].ToString() == "1" ? true : false;
+                        }
                     }
 
                 }
@@ -80,14 +79,15 @@ namespace SVentas.Data
             using (var conexion = new SqlConnection(cadenaConexion))
             {
                 conexion.Open();
-                var Insertsql = "INSERT INTO Producto (ListaProductos, Marca, Precio, Cantidad, Observacion) VALUES (@ListaProductos, @Marca, @Precio, @Cantidad, @Observacion)";
+                var Insertsql = "INSERT INTO Producto (Marca, Precio, Stock, Observacion,IdNombreProducto, Estado) VALUES (@ListaProductos, @Marca, @Precio, @Cantidad, @Observacion, @IdNombreProducto, @Estado)";
                 using (var comando = new SqlCommand(Insertsql, conexion))
                 {
-                    comando.Parameters.AddWithValue("@ListaProductos", producto.ListaProductos);
                     comando.Parameters.AddWithValue("@Marca", producto.Marca);
                     comando.Parameters.AddWithValue("@Precio", producto.Precio);
-                    comando.Parameters.AddWithValue("@Cantidad", producto.Cantidad);
+                    comando.Parameters.AddWithValue("@Stock", producto.Stock);
                     comando.Parameters.AddWithValue("@Observacion", producto.Observacion);
+                    comando.Parameters.AddWithValue("@IdNombreProducto", producto.IdNombreProducto);
+                    comando.Parameters.AddWithValue("@Estado", producto.Estado);
                     filasInsertadas = comando.ExecuteNonQuery();
                 }
             }
@@ -99,15 +99,15 @@ namespace SVentas.Data
             using (var conexion = new SqlConnection(cadenaConexion))
             {
                 conexion.Open();
-                var updatesql = "UPDATE Producto (ListaProductos, Marca, Precio, Cantidad, Observacion) VALUES(@ListaProductos, @Marca, @Precio, @Cantidad, @Observacion) WHERE (IdProducto = @Id))";
+                var updatesql = "UPDATE Producto (Marca, Precio, Stock, Observacion,IdNombreProducto, Estado) VALUES (@ListaProductos, @Marca, @Precio, @Cantidad, @Observacion, @IdNombreProducto, @Estado)";
                 using (var comando = new SqlCommand(updatesql, conexion))
                 {
-                    comando.Parameters.AddWithValue("@ListaProductos", producto.ListaProductos);
                     comando.Parameters.AddWithValue("@Marca", producto.Marca);
                     comando.Parameters.AddWithValue("@Precio", producto.Precio);
-                    comando.Parameters.AddWithValue("@Cantidad", producto.Cantidad);
+                    comando.Parameters.AddWithValue("@Stock", producto.Stock);
                     comando.Parameters.AddWithValue("@Observacion", producto.Observacion);
-                    comando.Parameters.AddWithValue("@Id", producto.IdProducto);
+                    comando.Parameters.AddWithValue("@IdNombreProducto", producto.IdNombreProducto);
+                    comando.Parameters.AddWithValue("@Estado", producto.Estado);
                     filasActualizadas = comando.ExecuteNonQuery();
                   }
               }
